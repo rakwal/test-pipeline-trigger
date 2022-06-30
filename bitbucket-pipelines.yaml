@@ -1,8 +1,7 @@
 image: atlassian/default-image:2
 pipelines:
-  branches:
-    master:
+  custom: # defines that this can only be triggered manually or by a schedule
+    master: # The name that is displayed in the list in the Bitbucket Cloud GUI
       - step:
-          name: Update Image
           script:
-            - apt-get update -y
+            - echo "Scheduled builds in Pipelines are awesome!"
