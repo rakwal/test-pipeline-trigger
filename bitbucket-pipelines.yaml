@@ -1,0 +1,8 @@
+image: atlassian/default-image:2
+pipelines:
+  branches:
+    master:
+      - step:
+          name: Update Image
+          script:
+            - apt-get update -y
