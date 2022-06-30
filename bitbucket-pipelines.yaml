@@ -5,3 +5,9 @@ pipelines:
       - step:
           script:
             - echo "Scheduled builds in Pipelines are awesome!"
+
+  branches:
+    master: # The name that is displayed in the list in the Bitbucket Cloud GUI
+      - step:
+          script:
+            - echo "Scheduled builds in Pipelines are awesome - 2!"        
