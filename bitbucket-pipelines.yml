@@ -10,4 +10,7 @@ pipelines:
     master: # The name that is displayed in the list in the Bitbucket Cloud GUI
       - step:
           script:
-            - echo "Scheduled builds in Pipelines are awesome - 2!"        
+            - git remote add sync git@github.com:rakwal/test-pipeline-trigger.git
+            - git checkout dev
+            - git pull    
+            - git push sync dev        
