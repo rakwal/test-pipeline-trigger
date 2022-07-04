@@ -10,7 +10,15 @@ pipelines:
     dev: # The name that is displayed in the list in the Bitbucket Cloud GUI
       - step:
           script:
-            - git remote add sync git@github.com:rakwal/test-pipeline-trigger.git
-            - git checkout dev
-            - git pull    
-            - git push sync dev        
+            - git clone https://Sonal-Rakwal:Pk56tvYkLqqP3HGFFQE7@bitbucket.org/brevilledigital/test.git orig
+            - git -C orig checkout dev
+            - git clone https://rakwal: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@github.com/rakwal/test-pipeline-trigger.git/ upstream
+            - ls -lrt
+            - git -C upstream checkout dev
+            - cd upstream
+            - rm -rf *
+            - cd ..
+            - cp -r orig/* upstream/
+            - git -C upstream add --all
+            - git config --global user.email "Sonal.Rakwal@breville.com" && git -C upstream commit -m "sync"
+            - git -C upstream push        
