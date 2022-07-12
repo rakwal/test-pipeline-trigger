@@ -16,7 +16,7 @@ pipelines:
           script:
             - git clone https://Sonal-Rakwal:Pk56tvYkLqqP3HGFFQE7@bitbucket.org/brevilledigital/test.git orig
             - git -C orig checkout dev
-            - git clone https://kr79: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@github.com/rakwal/test-pipeline-trigger.git/ upstream
+            - git clone https://kr79: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@github.com/rakwal/test-pipeline-trigger.git/ upstream
             - ls -lrt
             - git -C upstream checkout dev
             - cd upstream
