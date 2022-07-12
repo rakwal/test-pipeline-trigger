@@ -5,6 +5,10 @@ pipelines:
       - step:
           script:
             - echo "Scheduled builds in Pipelines are awesome!"
+    qa:
+      - step:
+          script:
+            - echo "qa branch"
 
   branches:
     dev: # The name that is displayed in the list in the Bitbucket Cloud GUI
@@ -12,13 +16,15 @@ pipelines:
           script:
             - git clone https://Sonal-Rakwal:Pk56tvYkLqqP3HGFFQE7@bitbucket.org/brevilledigital/test.git orig
             - git -C orig checkout dev
-            - git clone https://rakwal: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@github.com/rakwal/test-pipeline-trigger.git/ upstream
+            - git clone https://kr79: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@github.com/rakwal/test-pipeline-trigger.git/ upstream
             - ls -lrt
             - git -C upstream checkout dev
             - cd upstream
+            - ls -lrt
             - rm -rf *
             - cd ..
             - cp -r orig/* upstream/
             - git -C upstream add --all
-            - git config --global user.email "Sonal.Rakwal@breville.com" && git -C upstream commit -m "sync"
-            - git -C upstream push        
+            - git config --global user.email "arunkumar0305.ak@gmail.com" && git -C upstream commit -m "sync"
+            - git config --global push.default matching
+            - git -C upstream push
